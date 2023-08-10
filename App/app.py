@@ -47,3 +47,6 @@ if user_text:
         st.write("This is a negative statement.")
     else:
         st.write("The sentiment is neutral.")
+
+link = 'Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
+st.markdown(link, unsafe_allow_html=True)
