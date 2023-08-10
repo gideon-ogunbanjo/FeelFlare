@@ -26,9 +26,12 @@ def analyze_sentiment(text):
 
 # Streamlit User Interface
 st.title("FeelFlare - Sentiment Analysis App")
-
 st.write("FeelFlare is a Sentiment Analysis model. This model that determines whether a given text has a positive, negative, or neutral sentiment using natural language processing techniques.")
 
 # User Input
-
 user_text = st.text_input("Enter a sentence: ")
+
+# Checks if user has entered text
+if user_text:
+    # Performs sentiment analysis on user's input
+    sentiment, polarity = analyze_sentiment(user_text)
