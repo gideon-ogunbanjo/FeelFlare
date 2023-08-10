@@ -1,4 +1,3 @@
-# importing Libraries
 import streamlit as st
 from textblob import TextBlob
 
@@ -10,7 +9,6 @@ st.set_page_config(
 )
 
 # Function to perform Sentiment Analysis
-
 def analyze_sentiment(text):
     analysis = TextBlob(text)
     polarity = analysis.sentiment.polarity
@@ -26,27 +24,28 @@ def analyze_sentiment(text):
 
 # Streamlit User Interface
 st.title("FeelFlare - Sentiment Analysis App")
-st.write("FeelFlare is a Sentiment Analysis model. This model that determines whether a given text has a positive, negative, or neutral sentiment using natural language processing techniques.")
+st.write("FeelFlare is a Sentiment Analysis model that determines whether a given text has a positive, negative, or neutral sentiment using natural language processing techniques.")
 
 # User Input
 user_text = st.text_input("Enter a sentence: ")
 
-# Checks if user has entered text
-if user_text:
-    # Performs sentiment analysis on user's input
-    sentiment, polarity = analyze_sentiment(user_text)
+# Button to analyze
+if st.button("Analyze"):
+    if user_text:
+        # Performs sentiment analysis on user's input
+        sentiment, polarity = analyze_sentiment(user_text)
 
-# Displays sentiment and polarity score
-    st.write("Sentiment:", sentiment)
-    st.write("Polarity Score:", polarity)
-    
-    # Provides additional information based on sentiment
-    if sentiment == "positive":
-        st.write("This is a positive statement!")
-    elif sentiment == "negative":
-        st.write("This is a negative statement.")
-    else:
-        st.write("The sentiment is neutral.")
+        # Displays sentiment and polarity score
+        st.write("Sentiment:", sentiment)
+        st.write("Polarity Score:", polarity)
+
+        # Provides additional information based on sentiment
+        if sentiment == "positive":
+            st.write("This is a positive statement!")
+        elif sentiment == "negative":
+            st.write("This is a negative statement.")
+        else:
+            st.write("The sentiment is neutral.")
 
 link = 'Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
 st.markdown(link, unsafe_allow_html=True)
