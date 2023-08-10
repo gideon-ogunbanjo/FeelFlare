@@ -35,3 +35,15 @@ user_text = st.text_input("Enter a sentence: ")
 if user_text:
     # Performs sentiment analysis on user's input
     sentiment, polarity = analyze_sentiment(user_text)
+
+# Displays sentiment and polarity score
+    st.write("Sentiment:", sentiment)
+    st.write("Polarity Score:", polarity)
+    
+    # Provides additional information based on sentiment
+    if sentiment == "positive":
+        st.write("This is a positive statement!")
+    elif sentiment == "negative":
+        st.write("This is a negative statement.")
+    else:
+        st.write("The sentiment is neutral.")
