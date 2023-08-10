@@ -16,3 +16,10 @@ def analyze_sentiment(text):
         sentiment = "neutral"
     
     return sentiment, polarity
+
+# Streamlit User Interface
+st.title("FeelFlare - Sentiment Analysis App")
+
+# User Input
+
+user_text = st.text_input("Enter a sentence: ")
