@@ -14,3 +14,18 @@ def analyze_sentiment(text):
         sentiment = "neutral"
     
     return sentiment, polarity
+
+# User Interactions
+
+user_text = input("Enter a sentence: ")
+sentiment, polarity = analyze_sentiment(user_text)
+
+print("Sentiment:", sentiment)
+print("Polarity Score:", polarity)
+
+if sentiment == "positive":
+    print("This is a positive statement!")
+elif sentiment == "negative":
+    print("This is a negative statement.")
+else:
+    print("The sentiment is neutral.")
