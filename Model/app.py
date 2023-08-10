@@ -29,3 +29,24 @@ elif sentiment == "negative":
     print("This is a negative statement.")
 else:
     print("The sentiment is neutral.")
+
+# Handling Custom Sentences
+
+while True:
+    user_text = input("Enter a sentence (or type 'exit' to quit): ")
+    
+    if user_text.lower() == "exit":
+        print("Goodbye!")
+        break
+    
+    sentiment, polarity = analyze_sentiment(user_text)
+    
+    print("Sentiment:", sentiment)
+    print("Polarity Score:", polarity)
+    
+    if sentiment == "positive":
+        print("This is a positive statement!")
+    elif sentiment == "negative":
+        print("This is a negative statement.")
+    else:
+        print("The sentiment is neutral.")
