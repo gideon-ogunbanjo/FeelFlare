@@ -2,6 +2,13 @@
 import streamlit as st
 from textblob import TextBlob
 
+# Page configuration
+st.set_page_config(
+    page_title="FeelFlare",
+    layout="centered",
+    initial_sidebar_state="collapsed"
+)
+
 # Function to perform Sentiment Analysis
 
 def analyze_sentiment(text):
