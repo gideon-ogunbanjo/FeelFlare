@@ -52,7 +52,6 @@ if st.button("Analyze"):
         st.write("Sentiment:", sentiment)
         st.write("Polarity Score:", polarity)
 
-        # Provides additional information based on sentiment
         if sentiment == "positive":
             st.write("This is a positive statement!")
         elif sentiment == "negative":
