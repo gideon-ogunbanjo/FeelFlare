@@ -34,7 +34,7 @@ st.title("FeelFlare - Sentiment Analysis App")
 st.write("FeelFlare is a Sentiment Analysis model that determines whether a given text has a positive, negative, or neutral sentiment using natural language processing techniques.")
 
 # User Input
-user_text = st.text_input("Enter a sentence: ")
+user_text = st.text_input("Share how you feel: ")
 
 # Autocorrect option
 autocorrect_option = st.checkbox("Enable Autocorrect")
