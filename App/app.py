@@ -1,5 +1,6 @@
 import streamlit as st
 from textblob import TextBlob
+from autocorrect import Speller
 
 # Page configuration
 st.set_page_config(
@@ -22,12 +23,24 @@ def analyze_sentiment(text):
     
     return sentiment, polarity
 
+# Autocorrect function
+def autocorrect_text(text):
+    spell = Speller(lang='en')
+    corrected_text = spell(text)
+    return corrected_text
+
 # Streamlit User Interface
 st.title("FeelFlare - Sentiment Analysis App")
 st.write("FeelFlare is a Sentiment Analysis model that determines whether a given text has a positive, negative, or neutral sentiment using natural language processing techniques.")
 
 # User Input
 user_text = st.text_input("Enter a sentence: ")
+
+# Autocorrect option
+autocorrect_option = st.checkbox("Enable Autocorrect")
+
+if autocorrect_option and user_text:
+    user_text = autocorrect_text(user_text)
 
 # Button to analyze
 if st.button("Analyze"):
