@@ -1,6 +1,7 @@
 import streamlit as st
 from textblob import TextBlob
 from autocorrect import Speller
+import matplotlib.pyplot as plt
 import pyttsx3
 
 # Page configuration
@@ -29,12 +30,6 @@ def autocorrect_text(text):
     spell = Speller(lang='en')
     corrected_text = spell(text)
     return corrected_text
-
-# # Function to speak the text
-# def speak_text(text):
-#     engine = pyttsx3.init()
-#     engine.say(text)
-#     engine.runAndWait()
 
 # Streamlit User Interface
 st.title("FeelFlare - Sentiment Analysis App")
@@ -65,9 +60,19 @@ if st.button("Analyze"):
             st.write("This is a negative statement.")
         else:
             st.write("The sentiment is neutral.")
-        
-        # # Speak the results
-        # speak_text("The sentiment is " + sentiment)
+
+        # Visualization: Bar chart of sentiment distribution
+        sentiment_counts = {'Positive': 0, 'Negative': 0, 'Neutral': 0}
+        sentiment_counts[sentiment.capitalize()] = 1
+
+
+        # Displays the bar chart
+        st.header("Sentiment Visualization")
+        fig, ax = plt.subplots()
+        ax.bar(sentiment_counts.keys(), sentiment_counts.values())
+        ax.set_xlabel('Sentiment')
+        ax.set_ylabel('Count')
+        st.pyplot(fig)
 
 link = 'Created by [Gideon Ogunbanjo](https://gideonogunbanjo.netlify.app)'
 st.markdown(link, unsafe_allow_html=True)
