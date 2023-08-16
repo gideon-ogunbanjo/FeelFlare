@@ -8,6 +8,7 @@ FeelFlare is a web application that performs sentiment analysis on text input, d
 - Receive sentiment classification (positive, negative, or neutral) and a polarity score.
 - Get additional information based on the sentiment classification.
 - User-friendly and intuitive interface.
+- Sentiment Visualizations
 
 ### Creator
 Gideon Ogunbanjo
