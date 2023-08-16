@@ -1,0 +1,5 @@
+autocorrect==2.6.1
+matplotlib==3.7.1
+pyttsx3==2.90
+streamlit==1.25.0
+textblob==0.17.1
